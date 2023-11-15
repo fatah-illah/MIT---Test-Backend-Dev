@@ -1,5 +1,4 @@
 const sqlite3 = require("sqlite3").verbose();
-
 const db = new sqlite3.Database("./wedding_guestbook.db", (err) => {
   if (err) {
     console.error(err.message);
@@ -41,25 +40,3 @@ db.serialize(() => {
     }
   );
 });
-
-// Menampilkan isi tabel guests
-// db.serialize(() => {
-//   db.each("SELECT * FROM guests", (err, row) => {
-//     if (err) {
-//       console.error(err.message);
-//     }
-//     console.log(row);
-//   });
-// });
-
-// Menampilkan isi tabel admins
-// db.serialize(() => {
-//   db.each("SELECT * FROM admins", (err, row) => {
-//     if (err) {
-//       console.error(err.message);
-//     }
-//     console.log(row);
-//   });
-// });
-
-// db.close();
