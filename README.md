@@ -14,9 +14,9 @@ Fungsi `printPattern` adalah sebuah fungsi JavaScript yang mencetak sebuah pola 
 
 ### Cara Penggunaan
 
-1. pastikan Anda telah menginstal Node.js pada sistem Anda.
+1. Pastikan Anda telah menginstal Node.js pada sistem Anda.
 
-2. Jalankan command `cd pattern/` di root project untuk pindah ke soal no. 1.
+2. Jalankan command `cd pattern/` di root project untuk pindah ke soal 1.
 
 3. Jalankan command ini:
 
@@ -65,11 +65,12 @@ Untuk menginstal aplikasi, ikuti langkah-langkah berikut:
    ```
    git clone https://github.com/fatah-illah/MIT---Test-Backend-Dev.git
    ```
-2. Install dependensi NPM:
+2. Buat file .env dan sesuaikan isinya dengan contohnya di file .env.example
+3. Install dependensi NPM:
    ```
    npm install
    ```
-3. Siapkan database:
+4. Siapkan database:
    ```
    node database/init-db.js
    ```
