@@ -1,4 +1,5 @@
 const sqlite3 = require("sqlite3").verbose();
+
 const db = new sqlite3.Database("./wedding_guestbook.db", (err) => {
   if (err) {
     console.error(err.message);
@@ -6,8 +7,8 @@ const db = new sqlite3.Database("./wedding_guestbook.db", (err) => {
   console.log("Connected to the wedding guestbook database.");
 });
 
-// Membuat tabel guests
 db.serialize(() => {
+  // Membuat tabel guests
   db.run(
     `CREATE TABLE IF NOT EXISTS guests (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -20,23 +21,26 @@ db.serialize(() => {
       if (err) {
         console.error(err.message);
       }
+
+      // Membuat tabel admins di dalam callback dari tabel guests
+      db.run(
+        `CREATE TABLE IF NOT EXISTS admins (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          username TEXT NOT NULL,
+          password TEXT NOT NULL
+        )`,
+        (err) => {
+          if (err) {
+            console.error(err.message);
+          }
+
+          // Penutupan koneksi database
+          db.close();
+        }
+      );
     }
   );
 });
-
-// Membuat tabel admins
-db.run(
-  `CREATE TABLE IF NOT EXISTS admins (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    username TEXT NOT NULL,
-    password TEXT NOT NULL
-)`,
-  (err) => {
-    if (err) {
-      console.error(err.message);
-    }
-  }
-);
 
 // Menampilkan isi tabel guests
 // db.serialize(() => {
@@ -58,4 +62,4 @@ db.run(
 //   });
 // });
 
-db.close();
+// db.close();
