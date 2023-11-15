@@ -16,7 +16,7 @@ const guestController = {
   },
 
   getNotes: (req, res) => {
-    Guest.getAll((err, guests) => {
+    Guest.getAllFilter((err, guests) => {
       if (err) {
         res.status(500).send(err.message);
       } else {
