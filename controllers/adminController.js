@@ -23,7 +23,7 @@ const adminController = {
       if (err) {
         res.status(500).send("Error during authentication");
       } else if (admin) {
-        // Membuat token JWT jika autentikasi berhasil
+        // Create JWT token if authenticate success
         const token = jwt.sign({ id: admin.id }, process.env.JWT_SECRET_KEY, { expiresIn: "1h" });
         res.status(200).json({ token });
       } else {
@@ -31,6 +31,11 @@ const adminController = {
       }
     });
   },
+
+  logout: (req, res) => {
+  res.status(200).send("Logout successful. Please delete your token.");
+  },
+
 
   getAllGuests: (req, res) => {
     Guest.getAll((err, guests) => {

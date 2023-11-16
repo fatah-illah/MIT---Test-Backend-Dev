@@ -1,6 +1,6 @@
 # MIT - Test Backend Dev
 
-## Soal 1 (printPattern)
+## Question 1 (printPattern)
 
 ```
 1 2 3 4 5
@@ -10,21 +10,21 @@
 5 10 15 20 25
 ```
 
-Fungsi `printPattern` adalah sebuah fungsi JavaScript yang mencetak sebuah pola angka. Pola yang dicetak adalah tabel perkalian dimana baris dan kolom dimulai dari 1 hingga 5.
+The `printPattern` function is a JavaScript function that prints a pattern of numbers. The pattern printed is a multiplication table where rows and columns start from 1 to 5.
 
-### Cara Penggunaan
+### How to use
 
-1. Pastikan Anda telah menginstal Node.js pada sistem Anda.
+1. Make sure you have Node.js installed on your system.
 
-2. Jalankan command `cd pattern/` di root project untuk pindah ke soal 1.
+2. Run the `cd pattern/` command in the project root to move to question 1.
 
-3. Jalankan command ini:
+3. Run this command:
 
    ```
    node pattern.js
    ```
 
-4. Fungsi akan mencetak pola angka berikut ke konsol:
+4. The function will print the following number pattern to the console:
    ```
    1 2 3 4 5
    2 4 6 8 10
@@ -33,57 +33,57 @@ Fungsi `printPattern` adalah sebuah fungsi JavaScript yang mencetak sebuah pola 
    5 10 15 20 25
    ```
 
-## Soal 2 (Wedding Guestbook Application)
+## Question 2 (Wedding Guestbook Application)
 
-Aplikasi Buku Tamu Pernikahan ini adalah sistem backend yang memungkinkan tamu untuk menambahkan data diri mereka ke daftar tamu dan memberikan catatan. Aplikasi ini juga menyediakan antarmuka administratif untuk mengelola data tersebut.
+This Wedding Guest Book application is a backend system that allows guests to add themselves to the guest list and provide notes. The app also provides an administrative interface to manage such data.
 
-### Fitur
+### Features
 
-- **Guest Form**: Memungkinkan tamu untuk menambahkan nama, alamat, nomor telepon, dan catatan.
-- **Note Gallery**: Menampilkan semua catatan dari tamu.
-- **Autentikasi**: Proses login dan logout untuk admin menggunakan JWT.
-- **Admin Interface**: Memungkinkan admin untuk mengelola semua data tamu.
+- **Guest Form**: Allows guests to add their name, address, phone number, and notes.
+- **Note Gallery**: Displays all notes from the guest filtered only the name & notes attributes for guests.
+- **Authentication**: Register, Login, and logout process for admin using JWT.
+- **Admin Interface**: Allows admin to manage all guest data.
 
-### Teknologi yang Digunakan
+### Technology Used
 
 - Node.js
 - Express.js
 - SQLite
-- JWT untuk autentikasi
-- Bcrypt untuk hash password
-- ENV sebagai variabel lingkungan (penyimpan kode rahasia)
+- JWT for authentication
+- Bcrypt for password hash
+- ENV as environment variable (secret code store)
 
-### Persiapan Lingkungan
+### Environment Preparation
 
-Sebelum menjalankan aplikasi, pastikan Anda telah menginstal Node.js dan npm pada sistem Anda. Selain itu, Anda akan memerlukan SQLite untuk pengelolaan database.
+Before running the application, make sure you have Node.js and npm installed on your system. In addition, you will need SQLite for database management.
 
-### Instalasi
+### Installation
 
-Untuk menginstal aplikasi, ikuti langkah-langkah berikut:
+To install the app, follow these steps:
 
 1. Clone repository:
    ```
    git clone https://github.com/fatah-illah/MIT---Test-Backend-Dev.git
    ```
-2. Buat file .env dan sesuaikan isinya dengan contohnya di file .env.example
-3. Install dependensi NPM:
+2. Create a .env file and customize its contents with the example in the .env.example file
+3. Install the NPM dependencies:
    ```
    npm install
    ```
-4. Siapkan database:
+4. Set up a database:
    ```
    node database/init-db.js
    ```
 
-### Penggunaan
+### Usage
 
-Untuk menjalankan server:
+To run the server:
 
 ```
 npm start
 ```
 
-Server akan berjalan pada http://localhost:3000.
+The server will run on http://localhost:3000.
 
 ### API Endpoints
 
@@ -96,6 +96,7 @@ Server akan berjalan pada http://localhost:3000.
 
 - **Register**: `POST /admin/register`
 - **Login**: `POST /admin/login`
+- **Logout**: `POST /admin/logout`
 - **Get Guests Data**: `GET /admin/manage`
 - **Get Guests Data by id**: `GET /admin/manage/:id`
 - **Update Guests Data by id**: `PUT /admin/manage/:id`

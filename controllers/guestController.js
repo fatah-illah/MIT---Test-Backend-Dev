@@ -2,10 +2,10 @@ const Guest = require("../models/Guest");
 
 const guestController = {
   addGuest: (req, res) => {
-    // Ambil data dari request
+    // Take data from request
     const { name, address, phone, note } = req.body;
 
-    // Simpan data ke database
+    // Save data to database
     Guest.add({ name, address, phone, note }, (err) => {
       if (err) {
         res.status(500).send(err.message);
@@ -20,7 +20,7 @@ const guestController = {
       if (err) {
         res.status(500).send(err.message);
       } else {
-        // Hanya kirimkan nama dan catatan
+        // Just send name and notes
         const notes = guests.map((guest) => ({ name: guest.name, note: guest.note }));
         res.status(200).json(notes);
       }

@@ -8,5 +8,5 @@ function printPattern(rows) {
   }
 }
 
-// Mencetak pola untuk 5 baris
+// Print pattern for 5 rows
 printPattern(5);

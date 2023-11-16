@@ -2,7 +2,7 @@ const sqlite3 = require("sqlite3").verbose();
 const db = new sqlite3.Database("./wedding_guestbook.db");
 
 class Guest {
-  // Menambahkan data baru untuk tabel guests
+  // Add new data for table guests
   static add({ name, address, phone, note }, callback) {
     const sql = `INSERT INTO guests (name, address, phone, note) VALUES (?, ?, ?, ?)`;
     db.run(sql, [name, address, phone, note], (err) => {
@@ -10,7 +10,7 @@ class Guest {
     });
   }
 
-  // Menampilkan data dari tabel guests yang sudah difilter hanya atribut name & note saja
+  // Show data from table guests which has been filtered only the name & notes attributes
   static getAllFilter(callback) {
     const sql = `SELECT name, note FROM guests`;
     db.all(sql, [], (err, rows) => {
@@ -18,7 +18,7 @@ class Guest {
     });
   }
 
-  // Menampilkan semua data dari tabel guests
+  // Show all data from table guests
   static getAll(callback) {
     const sql = `SELECT * FROM guests`;
     db.all(sql, [], (err, rows) => {
@@ -26,7 +26,7 @@ class Guest {
     });
   }
 
-  // Menampilkan data berdasarkan id
+  // Show data based on id
   static getById(id, callback) {
     const sql = `SELECT * FROM guests WHERE id = ?`;
     db.get(sql, [id], (err, row) => {

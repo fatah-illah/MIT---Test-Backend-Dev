@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 
 class Admin {
   static addNewAdmin({ username, password }, callback) {
-    // Hash password sebelum menyimpan
+    // Hash password before save
     bcrypt.hash(password, 10, (err, hash) => {
       if (err) {
         return callback(err);
@@ -24,7 +24,7 @@ class Admin {
         return callback(err);
       }
       if (admin) {
-        // Membandingkan password yang di-hash
+        // Compare hashed password
         bcrypt.compare(password, admin.password, (err, result) => {
           if (result) {
             callback(null, admin);
