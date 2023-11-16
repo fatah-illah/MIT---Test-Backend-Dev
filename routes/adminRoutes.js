@@ -3,22 +3,22 @@ const router = express.Router();
 const adminController = require("../controllers/adminController");
 const authMiddleware = require("../middleware/authMiddleware");
 
-// Rute untuk menambah admin baru
+// Route for add new admin
 router.post("/register", authMiddleware, adminController.register);
 
-// Rute untuk login
+// Route for login
 router.post("/login", adminController.login);
 
-// Rute untuk get all
+// Route for get all
 router.get("/manage", authMiddleware, adminController.getAllGuests);
 
-// Rute untuk get by id
+// Route for get by id
 router.get("/manage/:id", authMiddleware, adminController.getGuestById);
 
-// Rute untuk update by id
+// Route for update by id
 router.put("/manage/:id", authMiddleware, adminController.updateGuest);
 
-// Rute untuk delete by id
+// Route for delete by id
 router.delete("/manage/:id", authMiddleware, adminController.deleteGuest);
 
 module.exports = router;

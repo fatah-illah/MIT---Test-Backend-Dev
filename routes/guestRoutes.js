@@ -2,10 +2,10 @@ const express = require("express");
 const router = express.Router();
 const guestController = require("../controllers/guestController");
 
-// Rute untuk menambahkan tamu
+// Route for add new guests data
 router.post("/add", guestController.addGuest);
 
-// Rute untuk menampilkan note gallery
+// Route for get note gallery
 router.get("/notes", guestController.getNotes);
 
 module.exports = router;

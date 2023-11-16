@@ -89,10 +89,14 @@ Server akan berjalan pada http://localhost:3000.
 
 #### Guest
 
-- **Tambah Tamu**: `POST /guest/add`
-- **Lihat Catatan**: `GET /guest/notes`
+- **Add New Guests Data**: `POST /guest/add`
+- **Show Note Gallery**: `GET /guest/notes`
 
 #### Admin
 
+- **Register**: `POST /admin/register`
 - **Login**: `POST /admin/login`
-- **Manajemen Data**: `GET /admin/manage`
+- **Get Guests Data**: `GET /admin/manage`
+- **Get Guests Data by id**: `GET /admin/manage/:id`
+- **Update Guests Data by id**: `PUT /admin/manage/:id`
+- **Delete Guests Data by id**: `DELETE /admin/manage/:id`

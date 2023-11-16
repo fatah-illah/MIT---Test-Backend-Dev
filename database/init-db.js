@@ -1,4 +1,5 @@
 const sqlite3 = require("sqlite3").verbose();
+
 const db = new sqlite3.Database("./wedding_guestbook.db", (err) => {
   if (err) {
     console.error(err.message);
@@ -7,7 +8,7 @@ const db = new sqlite3.Database("./wedding_guestbook.db", (err) => {
 });
 
 db.serialize(() => {
-  // Membuat tabel guests
+  // Create table guests
   db.run(
     `CREATE TABLE IF NOT EXISTS guests (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -21,7 +22,7 @@ db.serialize(() => {
         console.error(err.message);
       }
 
-      // Membuat tabel admins di dalam callback dari tabel guests
+      // Create table admins in callback from table guests
       db.run(
         `CREATE TABLE IF NOT EXISTS admins (
           id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -33,7 +34,7 @@ db.serialize(() => {
             console.error(err.message);
           }
 
-          // Penutupan koneksi database
+          // Closing connection database
           db.close();
         }
       );
