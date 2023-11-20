@@ -16,15 +16,13 @@ The `printPattern` function is a JavaScript function that prints a pattern of nu
 
 1. Make sure you have Node.js installed on your system.
 
-2. Run the `cd pattern/` command in the project root to move to question 1.
-
-3. Run this command:
+2. Run this command:
 
    ```
-   node pattern.js
+   node pattern/pattern.js
    ```
 
-4. The function will print the following number pattern to the console:
+3. The function will print the following number pattern to the console:
    ```
    1 2 3 4 5
    2 4 6 8 10

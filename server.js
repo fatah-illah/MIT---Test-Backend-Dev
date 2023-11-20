@@ -3,13 +3,13 @@ const guestRoutes = require("./routes/guestRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 
 const app = express();
-app.use(express.json()); // Untuk parsing JSON
+app.use(express.json()); // For JSON parsing
 
-// Pendefinisian rute
+// Route definition
 app.use("/guest", guestRoutes);
 app.use("/admin", adminRoutes);
 
-// Setup server untuk mendengarkan pada port tertentu
+// Setup the server to listen on a specific port
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
